@@ -11,6 +11,7 @@
 
 body{
     margin: 0px;
+    padding-top: 4rem;
     color: var(--color-default);
     font-family: var(--type-first);
 }
@@ -25,6 +26,9 @@ ul, li{
     margin: 0px;
 }
 
+a{
+    text-decoration: none;
+}
 img{
     display: block;
     max-width: 100%;
