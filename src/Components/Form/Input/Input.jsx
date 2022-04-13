@@ -12,8 +12,11 @@ const Input = (props) => {
         type={props.type}
         id={props.id}
         name={props.name}
+        value={props.value}
+        onChange={props.onChange}
+        onBlur={props.onBlur}
       />
-      <p className={styles.erro}>Erro</p>
+      {props.error && <p className={styles.erro}>{props.error}</p>}
     </div>
   );
 };
