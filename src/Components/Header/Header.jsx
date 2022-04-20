@@ -2,8 +2,10 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styles from "./Index.module.css";
 import { ReactComponent as Dogs } from "../../Assets/dogs.svg";
+import { UserContext } from "../../Context/UserContext";
 
 const Header = () => {
+  const { login, data } = React.useContext(UserContext);
   return (
     <header className={styles.header}>
       <nav className={`${styles.nav} container`}>
@@ -11,9 +13,15 @@ const Header = () => {
           {" "}
           <Dogs />
         </Link>
-        <Link className={styles.login} to="/login">
-          Login / Criar conta
-        </Link>
+        {login ? (
+          <Link className={styles.login} to="/user">
+            {data.nome}
+          </Link>
+        ) : (
+          <Link className={styles.login} to="/login">
+            Login / Criar conta
+          </Link>
+        )}
       </nav>
     </header>
   );
