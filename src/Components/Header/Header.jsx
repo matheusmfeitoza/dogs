@@ -15,7 +15,7 @@ const Header = () => {
         </Link>
         {login ? (
           <Link className={styles.login} to="/user">
-            {data.nome}
+            {data && <span>{data.nome}</span>}
           </Link>
         ) : (
           <Link className={styles.login} to="/login">

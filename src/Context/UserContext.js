@@ -25,7 +25,7 @@ export const UserProvider = (props) => {
     console.log(json);
     if (response.status === 200) {
       window.localStorage.setItem("token", json.token);
-      getUser(json.token);
+      await getUser(json.token);
       setLogin(true);
     }
   }
