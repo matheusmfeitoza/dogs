@@ -29,7 +29,11 @@ const LoginForm = () => {
           {...username}
         />
         <Input type="password" label="Senha" {...password} />
-        <Button>Entrar</Button>
+        {context.loading ? (
+          <Button disabled>Carregando...</Button>
+        ) : (
+          <Button>Entrar</Button>
+        )}
       </form>
       <Link to="/login/createuser">Cadastrar Usuário</Link>
     </div>
