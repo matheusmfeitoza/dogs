@@ -1,0 +1,25 @@
+.forgotUser{
+    display: block;
+    font-family: var(--type-second);
+    font-size: .875rem;
+    margin: 1rem 0;
+    cursor: pointer;
+}
+
+.forgotUser:hover{
+    color: var(--shadow-yellow-default);
+}
+
+.formButton{
+    display:flex;
+    flex-wrap: wrap;
+     gap: 20px;
+}
+.formButtonWrappe{
+display: block;
+}
+
+.spnForgot{
+ font-weight: bold;
+ font-style: italic;
+}

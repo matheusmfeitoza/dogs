@@ -5,6 +5,8 @@ import Button from "../Form/Button/Button";
 import useForm from "../../Hooks/useForm";
 import { UserContext } from "../../Context/UserContext";
 import Error from "../Ui/Error/Error";
+import styles from "./Styles/LoginForm.module.css";
+import stylesBtn from "../../Components/Form/Button/button.module.css";
 
 const LoginForm = () => {
   const username = useForm();
@@ -31,14 +33,22 @@ const LoginForm = () => {
           {...username}
         />
         <Input type="password" label="Senha" {...password} />
-        {context.loading ? (
-          <Button disabled>Carregando...</Button>
-        ) : (
-          <Button>Entrar</Button>
-        )}
+        <div className={styles.formButton}>
+          {context.loading ? (
+            <Button disabled>Carregando...</Button>
+          ) : (
+            <Button>Entrar</Button>
+          )}
+          <Link className={stylesBtn.button} to="/login/createuser">
+            Cadastrar Usuário
+          </Link>
+        </div>
       </form>
       <Error error={context.erro} />
-      <Link to="/login/createuser">Cadastrar Usuário</Link>
+      <Link className={styles.forgotUser} to="/login/forgotuser">
+        Esqueceu sua senha?{" "}
+        <span className={styles.spnForgot}>Clique aqui!</span>
+      </Link>
     </section>
   );
 };
