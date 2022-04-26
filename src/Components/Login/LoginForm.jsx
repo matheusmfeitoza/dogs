@@ -40,7 +40,7 @@ const LoginForm = () => {
             <Button>Entrar</Button>
           )}
           <Link className={stylesBtn.button} to="/login/createuser">
-            Cadastrar Usuário
+            Criar conta
           </Link>
         </div>
       </form>
