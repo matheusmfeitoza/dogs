@@ -74,6 +74,8 @@ export const UserProvider = (props) => {
         } finally {
           setLoading(false);
         }
+      } else {
+        setLogin(false);
       }
     }
     autoLogin();
