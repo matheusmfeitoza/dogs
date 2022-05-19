@@ -68,7 +68,6 @@ export const UserProvider = (props) => {
             throw new Error("Token Invalido");
           }
           await getUser(token);
-          console.log(token);
         } catch (err) {
           logoutUser();
         } finally {

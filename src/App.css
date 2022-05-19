@@ -9,18 +9,27 @@
     /* Box shadows effetcs */
     --shadow-ligth-yellow: #fea;
     --shadow-yellow-default: #fb1;
-
+    --shadow-light-gray:#eee
+    
     /* Inputs borders */
     --input-default-border: #eee;
 
     /* Warnings, errors and sucess */
     --color-error:#f31;
     
+    /* border colors */
+    --border-light-black: #333
+    --border-yellow-default:#fb1
 
     /* All of typography */
     --type-first: Helvetica,Arial,sans-serif;
     --type-second:'Spectral',Georgia;
     --type-font-color-normal: #764701;
+
+    /* Backgrounds on site */
+
+    --background-navheader: #eee;
+    --background-white: #fff;
 
 }
 * {
