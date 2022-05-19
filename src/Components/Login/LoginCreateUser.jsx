@@ -5,6 +5,8 @@ import useForm from "../../Hooks/useForm";
 import { USER_POST } from "../../api";
 import { useContext } from "react";
 import { UserContext } from "../../Context/UserContext";
+import useFetch from "../../Hooks/useFetch";
+import Error from "../Ui/Error/Error";
 
 const LoginCreateUser = () => {
   // Criando os states necessários
@@ -13,6 +15,7 @@ const LoginCreateUser = () => {
   const password = useForm();
 
   const context = useContext(UserContext);
+  const { erro, loading, request } = useFetch();
 
   // Função assincrona para cadastrar usuário pela API
   const handleSubmit = async (event) => {
@@ -22,7 +25,7 @@ const LoginCreateUser = () => {
       password: password.value,
       email: email.value,
     });
-    const response = await fetch(url, options);
+    const { response } = await request(url, options);
     if (response.ok) context.getUserToken(username.value, password.value);
   };
 
@@ -33,7 +36,12 @@ const LoginCreateUser = () => {
         <Input label="E-mail:" type="email" name="email" {...email} />
         <Input label="Usuário:" type="text" name="username" {...username} />
         <Input label="Senha:" type="password" name="password" {...password} />
-        <Button>Cadastrar</Button>
+        {loading ? (
+          <Button disabled>Cadastrando...</Button>
+        ) : (
+          <Button>Cadastrar</Button>
+        )}
+        <Error error={erro} />
       </form>
     </section>
   );
