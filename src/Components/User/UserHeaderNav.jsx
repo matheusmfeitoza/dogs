@@ -8,11 +8,18 @@ import { ReactComponent as Statics } from "../../Assets/estatisticas.svg";
 import { ReactComponent as PostPhoto } from "../../Assets/enviar.svg";
 import { ReactComponent as Logout } from "../../Assets/sair.svg";
 import useMedia from "../../Hooks/useMedia";
+import { useLocation } from "react-router-dom";
+import { useEffect } from "react";
 
 const UserHeaderNav = () => {
   const { logoutUser } = React.useContext(UserContext);
   const mobile = useMedia("(max-width: 40rem)");
   const [menuMobile, setMenuMobile] = React.useState(false);
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    setMenuMobile(false);
+  }, [pathname]);
 
   return (
     <>
@@ -25,7 +32,11 @@ const UserHeaderNav = () => {
           onClick={() => setMenuMobile(!menuMobile)}
         ></button>
       )}
-      <nav className={styles.nav}>
+      <nav
+        className={`${mobile ? styles.navMobile : styles.nav} ${
+          menuMobile && styles.navMobileActive
+        }`}
+      >
         <NavLink to="/conta" end>
           {" "}
           <MinhasFotos />
