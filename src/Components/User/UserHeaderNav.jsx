@@ -19,7 +19,9 @@ const UserHeaderNav = () => {
       {mobile && (
         <button
           aria-label="menu"
-          className={`${styles.menuMobile}`}
+          className={`${styles.menuMobile} ${
+            menuMobile && styles.menuMobileActive
+          }`}
           onClick={() => setMenuMobile(!menuMobile)}
         ></button>
       )}
