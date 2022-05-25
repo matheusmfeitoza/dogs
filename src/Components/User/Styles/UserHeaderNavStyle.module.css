@@ -35,4 +35,35 @@
 
 .nav a:global(.active) svg > *{
     fill:#fb1;
-}   
+}  
+
+.menuMobile {
+    background-color: var(--background-navheader);
+    border-radius: .2rem;
+    padding: 4px;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid transparent;
+    transition: .1s;
+    cursor: pointer;
+}
+.menuMobile::after{
+    content: '';
+    display: block;
+    width: 1.2rem;
+    height: 2px;
+    background-color: currentColor;
+    border-radius: 2px;
+    box-shadow: 0 6px currentColor, 0 -6px currentColor;
+}
+
+.menuMobile:focus,
+.menuMobile:hover{
+    outline: none;
+    background-color: var(--background-white);
+    box-shadow: 0 0 0 3px var(--shadow-ligth-yellow);
+    color: var(--color-yellow-default);
+}

@@ -20,6 +20,7 @@
     /* border colors */
     --border-light-black: #333
     --border-yellow-default:#fb1
+    --border-white-default:#fff
 
     /* All of typography */
     --type-first: Helvetica,Arial,sans-serif;
