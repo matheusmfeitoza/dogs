@@ -38,7 +38,6 @@ const UserHeaderNav = () => {
         }`}
       >
         <NavLink to="/conta" end>
-          {" "}
           <MinhasFotos />
           {mobile && "Minhas fotos"}
         </NavLink>
@@ -47,12 +46,10 @@ const UserHeaderNav = () => {
           {mobile && "Estatisticas"}
         </NavLink>
         <NavLink to="postar">
-          {" "}
           <PostPhoto />
           {mobile && "Adicionar fotos"}
         </NavLink>
         <button onClick={logoutUser}>
-          {" "}
           <Logout />
           {mobile && "sair"}
         </button>

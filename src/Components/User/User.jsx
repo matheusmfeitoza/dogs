@@ -10,9 +10,9 @@ const User = () => {
     <div className="container">
       <UserHeader />
       <Routes>
-        <Route to="/" element={<Feed />} />
-        <Route to="/postar" element={<UserPhotoPost />} />
-        <Route to="/estatisticas" element={<UserStatics />} />
+        <Route path="/" element={<Feed />} />
+        <Route path="/postar" element={<UserPhotoPost />} />
+        <Route path="/estatisticas" element={<UserStatics />} />
       </Routes>
     </div>
   );
