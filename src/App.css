@@ -76,6 +76,9 @@ button,input{
     padding: 0 1rem;
     margin: 0 auto;
 }
+.mid-container {
+    margin-bottom: 10rem;
+}
 .title{
     font-family: var(--type-second);
     line-height: 1;
