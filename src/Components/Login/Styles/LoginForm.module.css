@@ -1,26 +1,26 @@
-.forgotUser{
-    display: block;
-    font-family: var(--type-second);
-    font-size: .875rem;
-    margin: 1rem 0;
-    cursor: pointer;
+.forgotUser {
+  display: block;
+  font-family: var(--type-second);
+  font-size: 0.875rem;
+  margin: 1rem 0;
+  cursor: pointer;
 }
 
-.forgotUser:hover{
-    color: var(--shadow-yellow-default);
+.forgotUser:hover {
+  color: var(--shadow-yellow-default);
 }
 
-.formButton{
-    display:flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-     gap: 20px;
+.formButton {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
 }
-.formButtonWrappe{
-display: block;
+.formButtonWrappe {
+  display: block;
 }
 
-.spnForgot{
- font-weight: bold;
- font-style: italic;
+.spnForgot {
+  font-weight: bold;
+  font-style: italic;
 }
