@@ -1,0 +1,61 @@
+.form {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: stretch;
+  margin: 1rem;
+}
+
+.allComments {
+  display: block;
+  width: 100%;
+  font-size: 1rem;
+  font-family: var(--type-first);
+  resize: none;
+  border: 1px solid var(--color-default);
+  padding: 0.5rem;
+  border-radius: 0.2rem;
+  background-color: var(--shadow-light-gray);
+  transition: 0.2s;
+}
+
+.allComments:focus,
+.allComments:hover {
+  outline: none;
+  border-color: var(--color-yellow-default);
+  background-color: var(--color-white-default);
+  box-shadow: 0 0 0 3px var(--shadow-ligth-yellow);
+}
+
+.sendComment {
+  border: none;
+  cursor: pointer;
+  color: var(--color-default);
+  background-color: transparent;
+  font-size: 1rem;
+  padding: 0 1rem;
+  overflow: hidden;
+}
+
+.sendComment:focus,
+.sendComment:hover {
+  outline: none;
+}
+
+.sendComment:focus svg path,
+.sendComment:hover svg path {
+  fill: #fea;
+  stroke: #fb1;
+}
+.sendComment:focus svg g,
+.sendComment:hover svg g {
+  animation: opacityLatir 0.6s infinite;
+}
+
+@keyframes opacityLatir {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
