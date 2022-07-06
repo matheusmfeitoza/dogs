@@ -1,0 +1,15 @@
+.delete {
+  padding: 0.3rem 0.6rem;
+  background-color: var(--color-gray-light);
+  line-height: 1;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  font-family: var(--type-first);
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.delete:hover {
+  background-color: var(--color-default);
+  color: var(--text-white);
+}

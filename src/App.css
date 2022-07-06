@@ -6,6 +6,10 @@
   --color-yellow-default: #fb1;
   --color-white-default: #fff;
   --color-yellow-ligth: #fea;
+  --color-gray-light: #ddd;
+
+  /* text color */
+  --text-white: #fff;
 
   /* Box shadows effetcs */
   --shadow-ligth-yellow: #fea;

@@ -17,18 +17,20 @@ const PhotoDelete = ({ id }) => {
     }
   };
   return erro ? (
-    <div>
+    <>
       {" "}
       <Error error={erro} />
-    </div>
+    </>
   ) : (
-    <div>
+    <>
       {loading ? (
-        <button>Deletando...</button>
+        <button disabled>Deletando...</button>
       ) : (
-        <button onClick={handleClick}>Deletar</button>
+        <button className={styles.delete} onClick={handleClick}>
+          Deletar
+        </button>
       )}
-    </div>
+    </>
   );
 };
 
