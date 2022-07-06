@@ -15,14 +15,14 @@ export const PhotoContent = ({ data }) => {
       </div>
       <div className={styles.details}>
         <div>
-          <p className={styles.author}>
+          <div className={styles.author}>
             {user.data && user.data.username === photo.author ? (
               <PhotoDelete id={photo.id} />
             ) : (
               <Link to={`/perfil/${photo.author}`}>@{photo.author}</Link>
             )}
             <span className={styles.acessos}>{photo.acessos}</span>
-          </p>
+          </div>
           <h1 className="title">
             <Link to={`/photo/${photo.id}`}>{photo.title}</Link>
           </h1>
