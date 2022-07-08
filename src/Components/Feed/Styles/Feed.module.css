@@ -1,0 +1,9 @@
+.noPhotos {
+  display: block;
+  margin: auto;
+  text-align: center;
+  font-size: 0.875rem;
+  line-height: 1;
+  font-weight: 300;
+  color: var(--color-default);
+}
