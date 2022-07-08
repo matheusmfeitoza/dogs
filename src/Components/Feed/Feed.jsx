@@ -51,7 +51,7 @@ const Feed = ({ user }) => {
         );
       })}
       {haveMorePhotos && (
-        <span className={styles.noPhotos}>Não existe mais fotos</span>
+        <span className={styles.noPhotos}>Não existem mais fotos</span>
       )}
     </section>
   );
