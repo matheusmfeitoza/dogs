@@ -1,0 +1,8 @@
+.text {
+  margin: 1rem 0;
+}
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

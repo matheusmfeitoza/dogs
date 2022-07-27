@@ -11,6 +11,7 @@ import ProtectRoute from "./Components/Ui/ProtectedRoute/ProtectRoute";
 import User from "./Components/User/User";
 import Photo from "./Components/Photo/Photo";
 import UserProfile from "./Components/User/UserProfile";
+import PageNotFound from "./Components/Ui/PageNotFound/PageNotFound";
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
             />
             <Route path="/photo/:id" element={<Photo />} />
             <Route path="perfil/:user" element={<UserProfile />} />
+            <Route path="*" element={<PageNotFound />} />
           </Routes>
           <Footer />
         </UserProvider>
