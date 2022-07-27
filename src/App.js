@@ -9,6 +9,7 @@ import Login from "./Components/Login/Login";
 import { UserProvider } from "./Context/UserContext";
 import ProtectRoute from "./Components/Ui/ProtectedRoute/ProtectRoute";
 import User from "./Components/User/User";
+import Photo from "./Components/Photo/Photo";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
                 </ProtectRoute>
               }
             />
+            <Route path="/photo/:id" element={<Photo />} />
           </Routes>
           <Footer />
         </UserProvider>

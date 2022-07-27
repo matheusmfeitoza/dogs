@@ -17,17 +17,27 @@
     transform: initial;
   }
 }
+.singlePage.photo {
+  height: auto;
+  grid-template-columns: 1fr;
+}
 
 .details {
   padding: 2rem 2rem 0 2rem;
 }
 
+.singlePage .details {
+  padding: 1rem 0 0 0;
+}
+
 .img {
   grid-row: 1/4;
 }
-
-.comments {
-  padding: 0 2rem;
+.singlePage .img {
+  grid-row: 1;
+}
+.singlePage img {
+  border-radius: 1rem;
 }
 
 @media (max-width: 64rem) {

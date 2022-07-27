@@ -6,7 +6,7 @@ import useFetch from "../../Hooks/useFetch";
 import { COMMENT_POST } from "../../api";
 import Error from "../Ui/Error/Error";
 
-const PhotoCommentsForm = ({ idFoto, setListComments }) => {
+const PhotoCommentsForm = ({ singlePage, idFoto, setListComments }) => {
   const [comment, setComment] = useState("");
   const { request, erro } = useFetch();
 
@@ -21,7 +21,10 @@ const PhotoCommentsForm = ({ idFoto, setListComments }) => {
     }
   };
   return (
-    <form className={styles.form} onSubmit={handleSubmit}>
+    <form
+      className={`${styles.form} ${singlePage ? styles.singlePage : ""}`}
+      onSubmit={handleSubmit}
+    >
       <textarea
         className={styles.allComments}
         name="comment"

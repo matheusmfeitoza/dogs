@@ -6,11 +6,11 @@ import { PhotoComments } from "./PhotoComments";
 import PhotoDelete from "./PhotoDelete";
 import styles from "./styles/PhotoContent.module.css";
 
-export const PhotoContent = ({ data }) => {
+export const PhotoContent = ({ singlePage, data }) => {
   const { photo, comments } = data;
   const user = useContext(UserContext);
   return (
-    <div className={styles.photo}>
+    <div className={`${styles.photo} ${singlePage ? styles.singlePage : ""}`}>
       <div className={styles.img}>
         <Image src={photo.src} alt={photo.title} />
       </div>
@@ -37,7 +37,11 @@ export const PhotoContent = ({ data }) => {
           </ul>
         </div>
       </div>
-      <PhotoComments idFoto={photo.id} comments={comments} />
+      <PhotoComments
+        singlePage={singlePage}
+        idFoto={photo.id}
+        comments={comments}
+      />
     </div>
   );
 };

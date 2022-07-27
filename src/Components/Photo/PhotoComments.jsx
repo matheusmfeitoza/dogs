@@ -4,7 +4,7 @@ import { UserContext } from "../../Context/UserContext";
 import PhotoCommentsForm from "./PhotoCommentsForm";
 import styles from "./styles/PhotoComment.module.css";
 
-export const PhotoComments = ({ idFoto, comments }) => {
+export const PhotoComments = ({ singlePage, idFoto, comments }) => {
   const { login } = useContext(UserContext);
   const photoCommentsSection = useRef();
   const [listComments, setListComments] = useState(() => comments);
@@ -15,7 +15,10 @@ export const PhotoComments = ({ idFoto, comments }) => {
   }, [listComments]);
   return (
     <>
-      <ul ref={photoCommentsSection} className={styles.comments}>
+      <ul
+        ref={photoCommentsSection}
+        className={`${styles.comments} ${singlePage ? styles.singlePage : ""}`}
+      >
         {listComments.map((comment) => {
           return (
             <li key={comment.comment_ID}>
@@ -26,7 +29,11 @@ export const PhotoComments = ({ idFoto, comments }) => {
         })}
       </ul>
       {login && (
-        <PhotoCommentsForm idFoto={idFoto} setListComments={setListComments} />
+        <PhotoCommentsForm
+          singlePage={singlePage}
+          idFoto={idFoto}
+          setListComments={setListComments}
+        />
       )}
     </>
   );
