@@ -10,6 +10,7 @@ import { UserProvider } from "./Context/UserContext";
 import ProtectRoute from "./Components/Ui/ProtectedRoute/ProtectRoute";
 import User from "./Components/User/User";
 import Photo from "./Components/Photo/Photo";
+import UserProfile from "./Components/User/UserProfile";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
               }
             />
             <Route path="/photo/:id" element={<Photo />} />
+            <Route path="perfil/:user" element={<UserProfile />} />
           </Routes>
           <Footer />
         </UserProvider>
