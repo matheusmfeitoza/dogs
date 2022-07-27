@@ -8,6 +8,7 @@ const UserProfile = () => {
 
   return (
     <section className={`container midContainer ${styles.profile}`}>
+      <h1 className="title">{user}</h1>
       <Feed user={user} />
     </section>
   );

@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "../Ui/Image/Image";
 import styles from "./Styles/FeedPhotoItens.module.css";
+import PropType from "prop-types";
 
 const FeedPhotoItens = ({ itens, setModalPhoto }) => {
   function handleClick() {
@@ -12,6 +13,10 @@ const FeedPhotoItens = ({ itens, setModalPhoto }) => {
       <span className={styles.visualizacao}>{itens.acessos}</span>
     </li>
   );
+};
+
+FeedPhotoItens.PropType = {
+  itens: PropType.object.isRequired,
 };
 
 export default FeedPhotoItens;

@@ -5,6 +5,7 @@ import FeedPhotoItens from "./FeedPhotoItens";
 import Error from "../Ui/Error/Error";
 import Loading from "../Ui/Loading/Loading";
 import styles from "./Styles/FeedPhoto.module.css";
+import PropType from "prop-types";
 
 const FeedPhotos = ({
   total,
@@ -44,4 +45,15 @@ const FeedPhotos = ({
   else return null;
 };
 
+FeedPhotos.PropType = {
+  user: PropType.oneOfType([
+    PropType.string.isRequired,
+    PropType.number.isRequired,
+  ]),
+  page: PropType.number.isRequired,
+  total: PropType.string.isRequired,
+  setInfinity: PropType.func.isRequired,
+  setModalPhoto: PropType.func.isRequired,
+  setHaveMorePhotos: PropType.func.isRequired,
+};
 export default FeedPhotos;

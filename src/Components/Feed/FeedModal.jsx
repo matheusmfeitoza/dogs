@@ -1,4 +1,5 @@
 import React from "react";
+import PropType from "prop-types";
 import styles from "./Styles/FeedModal.module.css";
 import useFetch from "../../Hooks/useFetch";
 import Error from "../Ui/Error/Error";
@@ -27,6 +28,10 @@ const FeedModal = ({ photo, setModalPhoto }) => {
       {data && <PhotoContent data={data} />}
     </div>
   );
+};
+FeedModal.PropType = {
+  photo: PropType.object.isRequired,
+  setModalPhoto: PropType.func.isRequired,
 };
 
 export default FeedModal;
