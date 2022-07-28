@@ -9,6 +9,7 @@ const Input = (props) => {
       </label>
       <input
         className={styles.input}
+        placeholder={props.placeholder}
         type={props.type}
         id={props.id}
         name={props.name}
