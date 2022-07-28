@@ -1,0 +1,11 @@
+.footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: var(--color-yellow-default);
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+.footer p a:hover {
+  color: var(--type-font-color-normal);
+}

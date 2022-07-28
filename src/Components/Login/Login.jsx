@@ -7,12 +7,17 @@ import LoginForm from "./LoginForm";
 import styles from "./Styles/Login.module.css";
 import PageNotFound from "../Ui/PageNotFound/PageNotFound";
 import LoginRecoverPass from "./LoginRecoverPass";
+import Head from "../Ui/Head/Head";
 
 const Login = () => {
   const { login } = React.useContext(UserContext);
   if (login === true) return <Navigate to="/conta" />;
   return (
     <section className={styles.login}>
+      <Head
+        title={"Faça Login"}
+        description={"Cria sua conta e faça parte da nossa rede social"}
+      />
       <div className={styles.form}>
         <Routes>
           <Route path="/" element={<LoginForm />} />

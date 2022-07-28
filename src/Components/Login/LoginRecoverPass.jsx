@@ -6,6 +6,7 @@ import useForm from "../../Hooks/useForm";
 import useFetch from "../../Hooks/useFetch.jsx";
 import { PASSWORD_RESET } from "../../api";
 import { useNavigate } from "react-router-dom";
+import Head from "../Ui/Head/Head";
 
 const LoginRecoverPass = () => {
   const [key, setKey] = React.useState("");
@@ -36,6 +37,10 @@ const LoginRecoverPass = () => {
   };
   return (
     <section>
+      <Head
+        title="Recupere sua senha"
+        description="Crie uma nova senha e volte a usar nossa rede social"
+      />
       <h1 className="title"> Recupere seu acesso</h1>
       <form onSubmit={handleSubmit}>
         <Input

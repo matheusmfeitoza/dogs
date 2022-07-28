@@ -7,6 +7,7 @@ import { useContext } from "react";
 import { UserContext } from "../../Context/UserContext";
 import useFetch from "../../Hooks/useFetch";
 import Error from "../Ui/Error/Error";
+import Head from "../Ui/Head/Head";
 
 const LoginCreateUser = () => {
   // Criando os states necessários
@@ -31,6 +32,10 @@ const LoginCreateUser = () => {
 
   return (
     <section>
+      <Head
+        title="Crie sua conta"
+        description="Cadastre-se e venha participar da maior rede social de animais"
+      />
       <h1 className="title">Cadastre-se</h1>
       <form onSubmit={handleSubmit}>
         <Input label="E-mail:" type="email" name="email" {...email} />

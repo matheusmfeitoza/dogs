@@ -4,6 +4,7 @@ import FeedPhotos from "./FeedPhotos";
 import FeedModal from "./FeedModal";
 import { useState } from "react";
 import styles from "./Styles/Feed.module.css";
+import Head from "../Ui/Head/Head";
 const Feed = ({ user }) => {
   const [modalPhoto, setModalPhoto] = useState(null);
   const [pages, setPages] = React.useState([1]);
@@ -35,6 +36,7 @@ const Feed = ({ user }) => {
   }, [pages, infinity]);
   return (
     <section className="container mid-container">
+      <Head title={"Feed"} description={"Acompanhe o feed de fotos"} />
       {modalPhoto && (
         <FeedModal photo={modalPhoto} setModalPhoto={setModalPhoto} />
       )}
