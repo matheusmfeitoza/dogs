@@ -7,16 +7,18 @@ const UserStatisGraph = ({ data }) => {
   const [graph, setGraph] = React.useState([]);
 
   React.useEffect(() => {
-    const graphValues = data.map((item) => {
-      return {
-        x: item.title,
-        y: Number(item.acessos),
-      };
-    });
-    setAcessos(
-      data.map(({ acessos }) => Number(acessos)).reduce((a, b) => a + b)
-    );
-    setGraph(graphValues);
+    if (data.length > 0) {
+      const graphValues = data.map((item) => {
+        return {
+          x: item.title,
+          y: Number(item.acessos),
+        };
+      });
+      setAcessos(
+        data.map(({ acessos }) => Number(acessos)).reduce((a, b) => a + b)
+      );
+      setGraph(graphValues);
+    }
   }, [data]);
   return (
     <section className={`${styles.graph} animaLeft`}>
