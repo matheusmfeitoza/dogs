@@ -15,7 +15,7 @@ const LoginForgotPassword = () => {
     if (login.validate()) {
       const { url, options } = PASSWORD_lOST({
         login: login.value,
-        email: window.location.href.replace("forgotuser", "recoverpass"),
+        url: window.location.href.replace("forgotuser", "recoverpass"),
       });
       await request(url, options);
     }
