@@ -15,25 +15,27 @@ import PageNotFound from "./Components/Ui/PageNotFound/PageNotFound";
 
 function App() {
   return (
-    <div>
+    <div className="app">
       <BrowserRouter>
         <UserProvider>
           <Header />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/login/*" element={<Login />} />
-            <Route
-              path="/conta/*"
-              element={
-                <ProtectRoute>
-                  <User />
-                </ProtectRoute>
-              }
-            />
-            <Route path="/photo/:id" element={<Photo />} />
-            <Route path="perfil/:user" element={<UserProfile />} />
-            <Route path="*" element={<PageNotFound />} />
-          </Routes>
+          <main className="main-app">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/login/*" element={<Login />} />
+              <Route
+                path="/conta/*"
+                element={
+                  <ProtectRoute>
+                    <User />
+                  </ProtectRoute>
+                }
+              />
+              <Route path="/photo/:id" element={<Photo />} />
+              <Route path="perfil/:user" element={<UserProfile />} />
+              <Route path="*" element={<PageNotFound />} />
+            </Routes>
+          </main>
           <Footer />
         </UserProvider>
       </BrowserRouter>

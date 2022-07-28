@@ -90,7 +90,7 @@ input {
   margin-top: 2rem;
 }
 .mid-container {
-  margin-bottom: 10rem;
+  margin-bottom: 5rem;
 }
 .title {
   font-family: var(--type-second);
@@ -125,4 +125,14 @@ input {
     opacity: 1;
     transform: initial;
   }
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh + 5vh);
+}
+
+.main-app {
+  flex: 1;
 }

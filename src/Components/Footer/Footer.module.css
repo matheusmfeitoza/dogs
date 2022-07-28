@@ -1,10 +1,17 @@
 .footer {
-  text-align: center;
-  padding: 1rem;
-  background-color: var(--color-yellow-default);
-  position: fixed;
-  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
+  padding: 1rem;
+  height: 5rem;
+  background-color: var(--color-yellow-default);
+}
+
+.footer p {
+}
+.footer p a {
+  color: var(--color-white-default);
 }
 .footer p a:hover {
   color: var(--type-font-color-normal);

@@ -48,7 +48,7 @@ const Feed = ({ user }) => {
             page={item}
             setModalPhoto={setModalPhoto}
             setInfinity={setInfinity}
-            total="3"
+            total="6"
             setHaveMorePhotos={setHaveMorePhotos}
           />
         );

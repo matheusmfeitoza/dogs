@@ -5,13 +5,13 @@ const Footer = () => {
   return (
     <footer className={style.footer}>
       <p>
-        Todos os direitos reservados à{" "}
+        Todos os direitos reservados a{" "}
         <a
           href="https://github.com/matheusmfeitoza"
           target={"_blank"}
           rel="noreferrer"
         >
-          Matheus Marinho
+          Matheus Marinho Dev
         </a>
       </p>
     </footer>
