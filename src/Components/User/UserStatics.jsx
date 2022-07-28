@@ -2,8 +2,8 @@ import React from "react";
 import Loading from "../Ui/Loading/Loading";
 import Error from "../Ui/Error/Error";
 import useFecth from "../../Hooks/useFetch";
-import UserStatisGraph from "./UserStatisGraph";
 import { STATS_GET } from "../../api";
+const UserStatisGraph = React.lazy(() => import("./UserStatisGraph"));
 
 const UserStatics = () => {
   const { data, erro, loading, request } = useFecth();
@@ -20,9 +20,9 @@ const UserStatics = () => {
   if (loading) return <Loading />;
   if (data)
     return (
-      <section>
+      <React.Suspense fallback={<div></div>}>
         <UserStatisGraph data={data} />
-      </section>
+      </React.Suspense>
     );
   else return null;
 };
