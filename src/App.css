@@ -130,7 +130,13 @@ input {
 .app {
   display: flex;
   flex-direction: column;
-  min-height: calc(100vh + 5vh);
+  min-height: calc(100vh + 5rem);
+}
+
+@media (max-width: 40rem) {
+  .app {
+    min-height: calc(90vh + 5rem);
+  }
 }
 
 .main-app {
