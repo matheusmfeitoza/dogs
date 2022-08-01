@@ -40,10 +40,10 @@ In this project, you can run:
 
 The project was been finalized.
 
-## Matheus Marinho dev
+## [Matheus Marinho dev](https://github.com/matheusmfeitoza)
 
 Follow and share if you liked!
 
 <div align='center' style="background-color:#fb1; color:#000">
-    <p> Thank you for visit :heart:</p>
+    <p> Thank you for visit   :heart:</p>
 </div>
