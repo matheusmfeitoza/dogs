@@ -40,7 +40,7 @@ In this project, you can run:
 
 The project was been finalized.
 
-## [Matheus Marinho dev](https://github.com/matheusmfeitoza)
+## [Matheus Marinho Dev](https://github.com/matheusmfeitoza)
 
 Follow and share if you liked!
 
