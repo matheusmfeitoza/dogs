@@ -2,22 +2,48 @@
 
 This project is a practice on React course, by Origamid
 
-# Avaible Scripts
+
+<h1 style="color:#fb1">The Social media Page for your animal</h1>
+<p align="center">
+<img src="./.github/Dogs_final.png" alt="Final Dogs page"/>
+</p>
+
+# Available Scripts
 
 In this project, you can run:
 
-### `npm start`
+```bash
+ # Cloning the repository:
+ git clone git@github.com:matheusmfeitoza/dogs.git
 
-You will run this project in dev mode;
+ # Opening the project folder:
+ cd dogs  # You need to stay at folder when you cloned the project
 
-Maybe your browser will be opened and has this address localhost:3000
+ # Installing the dependencies:
+ npm install or npm i
 
-The page will reload when you make changes;
+ # Run the project with dev mode
+ npm run start
 
-## `npm run build`
+ # Build the project
+ npm run build
+```
 
-You will make the final build, production build
+## Technologies used in this project
+
+- React
+- React Router DOM
+- Victory
+- CSS Module
 
 # Project Status
 
-The project still in progress, please keep continuous visit.
+The project was been finalized.
+
+## Matheus Marinho dev
+
+Follow and share if you liked!
+
+<div align='center' style="background-color:#fb1; color:#000">
+    <p> Thank you for visit :heart:</p>
+</div>
