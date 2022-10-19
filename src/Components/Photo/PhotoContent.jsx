@@ -1,4 +1,5 @@
 import { useContext } from "react";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { UserContext } from "../../Context/UserContext";
 import Image from "../Ui/Image/Image";
@@ -6,8 +7,9 @@ import { PhotoComments } from "./PhotoComments";
 import PhotoDelete from "./PhotoDelete";
 import styles from "./styles/PhotoContent.module.css";
 
-export const PhotoContent = ({ singlePage, data }) => {
-  const { photo, comments } = data;
+export const PhotoContent = ({ singlePage }) => {
+  const { photo, comments } = useSelector((state) => state.photo.data);
+
   const user = useContext(UserContext);
   return (
     <div className={`${styles.photo} ${singlePage ? styles.singlePage : ""}`}>
