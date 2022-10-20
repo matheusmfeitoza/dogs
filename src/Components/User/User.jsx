@@ -1,6 +1,6 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import { Routes, Route } from "react-router-dom";
-import { UserContext } from "../../Context/UserContext";
 import Feed from "../Feed/Feed";
 import PageNotFound from "../Ui/PageNotFound/PageNotFound";
 import UserHeader from "./UserHeader";
@@ -8,7 +8,7 @@ import UserPhotoPost from "./UserPhotoPost";
 import UserStatics from "./UserStatics";
 
 const User = () => {
-  const { data } = React.useContext(UserContext);
+  const { data } = useSelector((state) => state.user);
   return (
     <div className="container">
       <UserHeader />

@@ -2,10 +2,10 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styles from "./Index.module.css";
 import { ReactComponent as Dogs } from "../../Assets/dogs.svg";
-import { UserContext } from "../../Context/UserContext";
+import { useSelector } from "react-redux";
 
 const Header = () => {
-  const { login, data } = React.useContext(UserContext);
+  const { data } = useSelector((state) => state.user);
   return (
     <header className={styles.header}>
       <nav className={`${styles.nav} container`}>
@@ -13,7 +13,7 @@ const Header = () => {
           {" "}
           <Dogs />
         </Link>
-        {login ? (
+        {data ? (
           <Link className={styles.login} to="/conta">
             {data && <span>{data.nome}</span>}
           </Link>

@@ -3,21 +3,27 @@ import { Link } from "react-router-dom";
 import Input from "../Form/Input/Input";
 import Button from "../Form/Button/Button";
 import useForm from "../../Hooks/useForm";
-import { UserContext } from "../../Context/UserContext";
 import Error from "../Ui/Error/Error";
 import styles from "./Styles/LoginForm.module.css";
 import stylesBtn from "../../Components/Form/Button/button.module.css";
+import { useDispatch, useSelector } from "react-redux";
+import { userLogin } from "../../store/user";
 
 const LoginForm = () => {
   const username = useForm();
   const password = useForm();
+  const dispatch = useDispatch();
 
-  const context = React.useContext(UserContext);
+  const { token, user } = useSelector((state) => state);
+  const loading = token.loading || user.loading;
+  const error = token.error || user.error;
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     if (username.validate() && password.validate()) {
-      context.getUserToken(username.value, password.value);
+      dispatch(
+        userLogin({ username: username.value, password: password.value })
+      );
     }
   };
 
@@ -34,7 +40,7 @@ const LoginForm = () => {
         />
         <Input type="password" label="Senha" {...password} />
         <div className={styles.formButton}>
-          {context.loading ? (
+          {loading ? (
             <Button disabled>Carregando...</Button>
           ) : (
             <Button>Entrar</Button>
@@ -44,7 +50,7 @@ const LoginForm = () => {
           </Link>
         </div>
       </form>
-      <Error error={context.erro} />
+      <Error error={error} />
       <Link className={styles.forgotUser} to="/login/forgotuser">
         Esqueceu sua senha?{" "}
         <span className={styles.spnForgot}>Clique aqui!</span>
