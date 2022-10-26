@@ -33,11 +33,16 @@ export const createAsyncSlice = (config) => {
         state.data = null;
         state.error = action.payload;
       },
+      resetState(state) {
+        state.loading = false;
+        state.data = null;
+        state.error = null;
+      },
       ...config.reducers,
     },
   });
 
-  const { fetchError, fetchStarted, fetchSuccess } = slice.actions;
+  const { fetchError, fetchStarted, fetchSuccess, resetState } = slice.actions;
 
   const fetchAsyncData = (payload) => async (dispatch) => {
     try {
@@ -52,5 +57,5 @@ export const createAsyncSlice = (config) => {
     }
   };
 
-  return { ...slice, fetchAsyncData };
+  return { ...slice, fetchAsyncData, resetState };
 };

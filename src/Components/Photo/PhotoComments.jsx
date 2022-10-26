@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import { useRef, useContext, useEffect } from "react";
-import { UserContext } from "../../Context/UserContext";
+import { useRef, useEffect } from "react";
+import { useSelector } from "react-redux";
 import PhotoCommentsForm from "./PhotoCommentsForm";
 import styles from "./styles/PhotoComment.module.css";
 
 export const PhotoComments = ({ singlePage, idFoto, comments }) => {
-  const { login } = useContext(UserContext);
+  const { data } = useSelector((state) => state.user);
   const photoCommentsSection = useRef();
   const [listComments, setListComments] = useState(() => comments);
 
@@ -28,7 +28,7 @@ export const PhotoComments = ({ singlePage, idFoto, comments }) => {
           );
         })}
       </ul>
-      {login && (
+      {data && (
         <PhotoCommentsForm
           singlePage={singlePage}
           idFoto={idFoto}

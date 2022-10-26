@@ -3,19 +3,19 @@ import Input from "../Form/Input/Input";
 import Button from "../Form/Button/Button";
 import useForm from "../../Hooks/useForm";
 import { USER_POST } from "../../api";
-import { useContext } from "react";
-import { UserContext } from "../../Context/UserContext";
 import useFetch from "../../Hooks/useFetch";
 import Error from "../Ui/Error/Error";
 import Head from "../Ui/Head/Head";
+import { useDispatch } from "react-redux";
+import { fetchToken } from "../../store/token";
 
 const LoginCreateUser = () => {
   // Criando os states necessários
   const username = useForm();
   const email = useForm("email");
   const password = useForm();
+  const dispatch = useDispatch();
 
-  const context = useContext(UserContext);
   const { erro, loading, request } = useFetch();
 
   // Função assincrona para cadastrar usuário pela API
@@ -27,7 +27,10 @@ const LoginCreateUser = () => {
       email: email.value,
     });
     const { response } = await request(url, options);
-    if (response.ok) context.getUserToken(username.value, password.value);
+    if (response.ok)
+      dispatch(
+        fetchToken({ username: username.value, password: password.value })
+      );
   };
 
   return (

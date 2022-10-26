@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { UserContext } from "../../Context/UserContext";
+import { logoutUser } from "../../store/user";
 import styles from "./Styles/UserHeaderNavStyle.module.css";
 //Import SVG's
 import { ReactComponent as MinhasFotos } from "../../Assets/feed.svg";
@@ -10,9 +10,10 @@ import { ReactComponent as Logout } from "../../Assets/sair.svg";
 import useMedia from "../../Hooks/useMedia";
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
+import { useDispatch } from "react-redux";
 
 const UserHeaderNav = () => {
-  const { logoutUser } = React.useContext(UserContext);
+  const dispatch = useDispatch();
   const mobile = useMedia("(max-width: 40rem)");
   const [menuMobile, setMenuMobile] = React.useState(false);
   const { pathname } = useLocation();
@@ -49,7 +50,7 @@ const UserHeaderNav = () => {
           <PostPhoto />
           {mobile && "Adicionar fotos"}
         </NavLink>
-        <button onClick={logoutUser}>
+        <button onClick={() => dispatch(logoutUser())}>
           <Logout />
           {mobile && "sair"}
         </button>
