@@ -3,25 +3,36 @@ import PropType from "prop-types";
 import FeedPhotos from "./FeedPhotos";
 import FeedModal from "./FeedModal";
 import { useState } from "react";
-import styles from "./Styles/Feed.module.css";
 import Head from "../Ui/Head/Head";
+import { useDispatch, useSelector } from "react-redux";
+import { loadMorePhotos, resetFeed } from "../../store/feed";
+import Loading from "../Ui/Loading/Loading";
+import Error from "../Ui/Error/Error";
+
 const Feed = ({ user }) => {
   const [modalPhoto, setModalPhoto] = useState(null);
-  const [pages, setPages] = React.useState([1]);
-  const [infinity, setInfinity] = React.useState(true);
-  const [haveMorePhotos, setHaveMorePhotos] = React.useState(false);
+
+  const { list, isInfinity, loading, error } = useSelector(
+    (state) => state.feed
+  );
+  const dispatch = useDispatch();
+
+  React.useEffect(() => {
+    dispatch(resetFeed());
+    dispatch(loadMorePhotos({ total: 6, user }));
+  }, [dispatch, user]);
 
   React.useEffect(() => {
     let wait = false;
     const infiniteScroll = () => {
-      if (infinity) {
+      if (isInfinity) {
         const scroll = window.scrollY;
         const height = document.body.offsetHeight - window.innerHeight;
         if (scroll > height * 0.75 && !wait) {
           wait = true;
-          setPages((pages) => [...pages, pages.length + 1]);
+          dispatch(loadMorePhotos({ total: 6, user }));
           setTimeout(() => {
-            wait = true;
+            wait = false;
           }, 500);
         }
       }
@@ -33,29 +44,16 @@ const Feed = ({ user }) => {
       window.removeEventListener("wheel", infiniteScroll);
       window.removeEventListener("scroll", infiniteScroll);
     };
-  }, [pages, infinity]);
+  }, [isInfinity, dispatch, user]);
   return (
     <section className="container mid-container">
       <Head title={"Feed"} description={"Acompanhe o feed de fotos"} />
       {modalPhoto && (
         <FeedModal photo={modalPhoto} setModalPhoto={setModalPhoto} />
       )}
-      {pages.map((item, index) => {
-        return (
-          <FeedPhotos
-            key={index}
-            user={user}
-            page={item}
-            setModalPhoto={setModalPhoto}
-            setInfinity={setInfinity}
-            total="6"
-            setHaveMorePhotos={setHaveMorePhotos}
-          />
-        );
-      })}
-      {haveMorePhotos && (
-        <span className={styles.noPhotos}>Não existem mais fotos</span>
-      )}
+      {list.length > 0 && <FeedPhotos setModalPhoto={setModalPhoto} />}
+      {loading && <Loading />}
+      {error && <Error error={error} />}
     </section>
   );
 };
