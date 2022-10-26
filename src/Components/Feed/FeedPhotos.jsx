@@ -3,7 +3,7 @@ import FeedPhotoItens from "./FeedPhotoItens";
 import styles from "./Styles/FeedPhoto.module.css";
 import { useSelector } from "react-redux";
 
-const FeedPhotos = ({ setModalPhoto }) => {
+const FeedPhotos = () => {
   const { list } = useSelector((state) => state.feed);
 
   return (
@@ -12,7 +12,6 @@ const FeedPhotos = ({ setModalPhoto }) => {
         <FeedPhotoItens
           key={photo.id}
           itens={photo}
-          setModalPhoto={setModalPhoto}
         />
       ))}
     </ul>
